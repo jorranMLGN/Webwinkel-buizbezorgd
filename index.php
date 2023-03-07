@@ -1,4 +1,7 @@
 <?php require_once 'components/card.php'; ?>
+<?php require_once 'components/login.php'; ?>
+<?php require_once 'components/header.php'; ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,74 +11,60 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/login-popup.js"></script>
+    <link href="https://fonts.apple.com/fonts/san-francisco" rel="stylesheet" />
   </head>
-  <body class="bg-gray-100 grid">
-    <header class="bg-teal-800 px-4 py-2 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-white">BuisBezorgd</h1>
-      <nav>
-        <ul class="flex">
-          <li class="mr-2 lg:mr-4">
-            <a href="#" class="text-white font-bold text-xs lg:text-lg hover:text-gray-900 ">Home</a>
-          </li>
-          <li class="mr-2 lg:mr-4">
-            <a href="#" class="text-white font-bold text-xs lg:text-lg hover:text-gray-900">Products</a>
-          </li>
-          <li class="mr-2 lg:mr-4">
-            <a href="#" class="text-white font-bold text-xs lg:text-lg hover:text-gray-900">About</a>
-          </li>
-          <li class="mr-2 lg:mr-4">
-            <a href="#" class="text-white font-bold text-xs lg:text-lg hover:text-gray-900">Contact</a>
-          </li>
-          <li>
-            <a href="#"  onclick="popupLogin()" class="text-white font-bold text-xs lg:text-lg hover:text-gray-900">Login</a>
-          </li>
-        </ul>
-      </nav>
-
-    </header>
+  <body class="grid bg-gray-100">
+    <?php headerComp(); ?>
+    <?php login(); ?>
     <img src="media/bg-cocktail.png" alt="cocktails" class="w-full mb-4" />
+    <main class="max-w-6xl mx-auto mt-1 mb-3 bg-white rounded-lg shadow-xl">
+      <div class="flex flex-wrap">
+        <div class="w-full p-6 md:w-1/2">
+          <h2 class="text-2xl font-bold text-gray-800">
+            Bestel gemakkelijk en snel
+          </h2>
+          <p class="mt-2 text-gray-600">
+            Bij Buizbezorgd bieden we een uitgebreid assortiment aan dranken,
+            waaronder bier, wijn, sterke drank en mixdrankjes. Of je nu thuis
+            bent of op een feestje, wij zorgen ervoor dat je nooit zonder drank
+            zit.
+          </p>
+          <p class="mt-2 text-gray-600">
+            Onze bezorgservice is snel, betrouwbaar en discreet. We bezorgen je
+            dranken op een veilige en verantwoorde manier, zodat jij kunt
+            genieten van je avond zonder zorgen.
+          </p>
+          <p class="mt-2 text-gray-600">
+            Dus waar wacht je nog op? Plaats vandaag nog je bestelling en laat
+            ons je dranken bij je thuis bezorgen. Bij Buizbezorgd staan we
+            altijd voor je klaar!
+          </p>
+          <div class="flex flex-row justify-between">
+            <div class="h-32 mr-3">
+              <img class="w-full h-full" src="media/rating.png" alt="Rating" />
+            </div>
+            <a
+              href="product.php"
+              class="px-2 py-2 mt-24 font-bold text-white bg-green-500 rounded max-h-10 hover:bg-green-700"
+              >Bestel nu</a
+            >
+          </div>
+        </div>
 
-    <div class="hidden fixed rounded z-20 place-self-center" id="loginForm">
-        <form action="/action_page.php" class="flex flex-col max-w-4xl p-5 shadow bg-white lg:max-w-9xl lg:min-w-9xl">
-            <h1 class="py-3 ">Login</h1>
-            <label for="email"><b>Email</b></label>
-            <input class="w-72 p-2 m-1 rounded focus:bg-slate-400 focus:outline-none shadow"
-            type="text" placeholder="Enter Email" name="email" required />
-            <label for="psw"><b>Password</b></label>
-            <input class="w-72 p-3 m-1 border-none focus:bg-slate-400 focus:outline-none shadow"
-            type="password" placeholder="Enter Password" name="psw" required />
-            <button type="submit" class="w-3/4 m-auto p-2 mt-5 rounded shadow">Login</button>
-            <button type="button" class="w-3/4 m-auto p-2 mt-2 rounded shadow" onclick="popupLogin()">
-            Close
-            </button>
-        </form>
-    </div>
-
-    <main class="px-4 py-8 flex flex-wrap justify-between">
-      <section class="products w-full lg:w-2/3">
-        <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
-        <ul class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <?php card("Hertog jan pils 24stuks","Alcoholpercentage: 5.1%","20,-","./media/product1.png",); ?>
-          <?php card("Birra Moretti L'autentica krat","Alcoholpercentage: 4.6%","21.99,-","./media/product2.png",); ?>
-          <?php card("Grolsch Pilsener krat","Alcoholpercentage: 5%","17.98,-","./media/product3.png",); ?>
-        </ul>
-      </section>
-      <aside class="cart w-1/3 bg-gray-100 p-4">
-        <h2 class="mt-0">Shopping Cart</h2>
-        <ul class="list-none m-0 p-0">
-          <li class="mb-2">Product 1 - $19.99</li>
-          <li class="mb-2">Product 2 - $29.99</li>
-          <li class="mb-2">Product 3 - $39.99</li>
-          <li class="font-bold">Total: $89.97</li>
-        </ul>
-        <button
-          class="bg-gray-800 text-white border-none py-2 px-4 mt-4 cursor-pointer hover:bg-gray-900">
-          Checkout
-        </button>
-      </aside>
+        <div class="w-full p-6 md:w-1/2">
+          <img
+            class="object-cover object-center w-full h-full rounded-lg"
+            src="media/bier.png"
+            alt="Bier" />
+        </div>
+      </div>
     </main>
-    <footer class="bg-gray-200 py-4 text-center">
-      <p>&copy; 2023 My Webshop Store. All rights reserved.</p>
+    <footer class="bg-gray-200">
+      <div
+        class="container flex items-center justify-between px-6 py-4 mx-auto">
+        <p class="mt-2 text-gray-600">© 2023 Buizbezorgd</p>
+        <a class="text-gray-600 hover:text-gray-800" href="/contact">Contact</a>
+      </div>
     </footer>
   </body>
 </html>
