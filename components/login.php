@@ -1,9 +1,11 @@
 <?php
 
 function login() {
+    require_once './pages/conn.php'; 
+
     echo <<<LOGIN
     <div class="fixed z-20 hidden transition-all ease-in-out rounded-lg shadow opacity-0 mb-28 place-self-center" id="loginForm">
-    <form action="/action_page.php" class="flex flex-col max-w-4xl p-5 rounded-lg shadow bg-slate-50 lg:max-w-9xl lg:min-w-9xl">
+    <form action="./pages/inlog.php" method="post" class="flex flex-col max-w-4xl p-5 rounded-lg shadow bg-slate-50 lg:max-w-9xl lg:min-w-9xl">
         <div class="flex flex-row justify-between">
         <h1 class="p-3 ">Inloggen</h1>
         <button type="button" class="justify-center w-6 p-2 text-2xl font-medium mb-7 " onclick="popupLogin()">X</button>
@@ -27,7 +29,7 @@ function login() {
         <input class="p-3 m-1 mb-3 shadow rounded-xl w-96 focus:bg-slate-200 focus:outline-none"
         type="text" placeholder="Vul in Email" name="email" required />
         <label for="psw"><b>Wachtwoord</b></label>
-        <input class="p-3 m-1 shadow rounded-xl w-96 focus:bg-slate-200 focus:outline-none" type="password" placeholder="Vul in Wachtwoord" name="psw" required />
+        <input class="p-3 m-1 shadow rounded-xl w-96 focus:bg-slate-200 focus:outline-none" type="password" placeholder="Vul in Wachtwoord" name="password" required />
         <div class="p-4">
         <div class="w-11/12 h-px m-auto shadow-md bg-slate-200"></div>
         </div>

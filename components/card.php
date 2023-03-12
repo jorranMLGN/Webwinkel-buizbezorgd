@@ -1,13 +1,12 @@
 <?php
-
 function card($name, $description, $price, $imageLink) {
     echo <<<CARD
-      <li class="bg-white shadow rounded-lg p-4">
+      <li class="p-4 bg-white rounded-lg shadow">
         <img src="$imageLink" alt="Product 1" class="w-full mb-4" />
-        <h3 class="text-lg font-bold mb-2">$name</h3>
-        <p class="text-gray-700 mb-2">$description</p>
-        <p class="text-green-600 font-bold text-lg mb-2">€ $price</p>
-        <button class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-3">Toevoegen</button>
+        <h3 class="mb-2 text-lg font-bold">$name</h3>
+        <p class="mb-2 text-gray-700">$description</p>
+        <p class="mb-2 text-lg font-bold text-green-600">€ $price</p>
+        <button id="addCart" class="px-4 py-2 mt-3 text-white bg-green-600 rounded hover:bg-green-700" onclick="addCart('$name','$price')">Toevoegen</button>
       </li>
   CARD;
   }

@@ -2,6 +2,7 @@
 <?php require_once 'components/login.php'; ?>
 <?php require_once 'components/header.php'; ?>
 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,7 +25,7 @@
             Bestel gemakkelijk en snel
           </h2>
           <p class="mt-2 text-gray-600">
-            Bij Buizbezorgd bieden we een uitgebreid assortiment aan dranken,
+            Bij Buisbezorgd bieden we een uitgebreid assortiment aan dranken,
             waaronder bier, wijn, sterke drank en mixdrankjes. Of je nu thuis
             bent of op een feestje, wij zorgen ervoor dat je nooit zonder drank
             zit.
@@ -36,7 +37,7 @@
           </p>
           <p class="mt-2 text-gray-600">
             Dus waar wacht je nog op? Plaats vandaag nog je bestelling en laat
-            ons je dranken bij je thuis bezorgen. Bij Buizbezorgd staan we
+            ons je dranken bij je thuis bezorgen. Bij Buisbezorgd staan we
             altijd voor je klaar!
           </p>
           <div class="flex flex-row justify-between">
@@ -62,7 +63,7 @@
     <footer class="bg-gray-200">
       <div
         class="container flex items-center justify-between px-6 py-4 mx-auto">
-        <p class="mt-2 text-gray-600">© 2023 Buizbezorgd</p>
+        <p class="mt-2 text-gray-600">© 2023 Buisbezorgd</p>
         <a class="text-gray-600 hover:text-gray-800" href="/contact">Contact</a>
       </div>
     </footer>
