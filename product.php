@@ -1,6 +1,7 @@
 <?php require_once 'components/card.php'; ?>
 <?php require_once 'components/login.php'; ?>
 <?php require_once 'components/header.php'; ?>
+<?php require_once 'pages/conn.php';?> 
 
 
 <!DOCTYPE html>
@@ -25,9 +26,17 @@
       <section class="w-full lg:w-2/3">
         <h2 class="mb-4 text-2xl font-bold">Uitgelichte Producten</h2>
         <ul class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <?php card("Hertog jan pils 24stuks","Alcoholpercentage: 5.1%","20,-","./media/product1.png",); ?>
-          <?php card("Birra Moretti L autentica krat","Alcoholpercentage: 4.6%","21,99","./media/product2.png",); ?>
-          <?php card("Grolsch Pilsener krat","Alcoholpercentage: 5%","17,98","./media/product3.png",); ?>
+          <?php
+          $stmt = $conn->prepare("SELECT name, description, price, img FROM `product`");
+          $stmt->execute();      
+  
+          $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+          $rows = $stmt->fetchAll();
+
+          foreach ($rows as $row) {
+            card($row['name'], $row['description'], $row['price'], $row['img']);
+          }
+          ?>
           
         </ul>
       </section>
@@ -37,9 +46,6 @@
         <div class="w-2/12 p-3 "><img src="media/winkelmand.svg" alt="Winkelmand"></div>
         </div>
         <ul id="shopCartParent" class="p-4 m-0 list-none">
-
-
-          <!-- <li class="font-bold">Totaal: €89.97</li> -->
         </ul>
         <button
           class="px-4 py-2 mt-4 ml-4 text-white bg-gray-800 border-none cursor-pointer hover:bg-gray-900">

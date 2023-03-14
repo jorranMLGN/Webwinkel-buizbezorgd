@@ -1,38 +1,32 @@
-// Create a Set
 const itemsAdded = [];
-const total = 0;
-const totalCreate = false;
+let totalCreate = false;
+let totalNode;
+
 function addCart(name, price) {
-  const node = document.createElement("li");
-  const textnode = document.createTextNode(name + " - " + price);
-  node.appendChild(textnode);
-  //   itemsAdded.add(price);
-  //   itemsAdded.push(price);
+  let total = 0.0;
+  itemsAdded.push(parseFloat(price));
 
-  //   console.log(itemsAdded);
-  //   itemsAdded.add(name + price);
+  itemsAdded.forEach(function (item) {
+    total += item;
+  });
 
-  document.getElementById("shopCartParent").appendChild(node);
-
-  for (const i = 0; i < itemsAdded.size; i++) {
-    if (!totalCreate) {
-      for (var k in itemsAdded) {
-        total += itemsAdded[k];
-      }
-      node = document.createElement("li");
-      textnode = document.createTextNode("Total: " + total);
-      node.appendChild(textnode);
-      document.getElementById("shopCartParent").appendChild(node);
-      totalCreate = true;
-    } else {
-      for (var k in itemsAdded) {
-        total += itemsAdded[k];
-      }
-      const amount = itemsAdded.size();
-      node = document.createElement("li");
-      textnode = document.createTextNode("Total: " + total);
-      node.appendChild(textnode);
-      document.getElementById("shopCartParent").replaceChild[amount](node);
-    }
+  // if total node already exists, update it with the new total
+  if (totalCreate) {
+    totalNode.textContent = "Totaal:  €" + total.toFixed(2);
+  } else {
+    // otherwise, create a new total node and add it to the cart
+    totalNode = document.createElement("h1");
+    const textNodePrice = document.createTextNode(
+      "Totaal: " + total.toFixed(2)
+    );
+    totalNode.appendChild(textNodePrice);
+    totalNode.setAttribute("id", "totalNode");
+    document.getElementById("shopCartParent").appendChild(totalNode);
+    totalCreate = true;
   }
+
+  const node = document.createElement("li");
+  const textnode = document.createTextNode(name + " -  €" + price);
+  node.appendChild(textnode);
+  document.getElementById("shopCartParent").appendChild(node);
 }

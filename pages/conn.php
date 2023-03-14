@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "password";
 $db = "buisbezordbase";
 
 
@@ -14,6 +14,5 @@ try {
   echo "Connection failed: " . $e->getMessage();
 }
 
-  $conn = null;
   
 ?> 

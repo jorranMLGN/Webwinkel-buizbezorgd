@@ -12,7 +12,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "password";
 $db = "buisbezordbase";
 
 $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);

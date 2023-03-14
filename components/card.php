@@ -1,6 +1,8 @@
 <?php
+
 function card($name, $description, $price, $imageLink) {
     echo <<<CARD
+    
       <li class="p-4 bg-white rounded-lg shadow">
         <img src="$imageLink" alt="Product 1" class="w-full mb-4" />
         <h3 class="mb-2 text-lg font-bold">$name</h3>
