@@ -1,10 +1,10 @@
 <?php
 
 function login() {
-    require_once './pages/conn.php'; 
+    require_once './pages/conn.php';
 
     echo <<<LOGIN
-    <div class="fixed z-20 hidden transition-all ease-in-out rounded-lg shadow opacity-0 mb-28 place-self-center" id="loginForm">
+    <div class="fixed z-20 hidden transition-all ease-in-out rounded-lg opacity-0 top-20 place-self-center" id="loginForm">
     <form action="./pages/inlog.php" method="post" class="flex flex-col max-w-4xl p-5 rounded-lg shadow bg-slate-50 lg:max-w-9xl lg:min-w-9xl">
         <div class="flex flex-row justify-between">
         <h1 class="p-3 ">Inloggen</h1>

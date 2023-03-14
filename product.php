@@ -42,7 +42,7 @@
       </section>
       <aside class="w-1/3 p-4 bg-gray-100">
         <div class="flex flex-row">
-        <h2 class="p-5 mt-0 text-lg font-bold">Winkelmand</h2>
+        <h2 class="p-4 mt-0 text-3xl font-bold">Winkelmand</h2>
         <div class="w-2/12 p-3 "><img src="media/winkelmand.svg" alt="Winkelmand"></div>
         </div>
         <ul id="shopCartParent" class="p-4 m-0 list-none">

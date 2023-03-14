@@ -34,9 +34,10 @@ if (empty($_POST["email"])) {
     echo "Your Password is: ".$psw."<br>";
     try{
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $stmt = $conn->prepare("SELECT username FROM `users` WHERE username=:email AND pass=:pass");
+      $stmt = $conn->prepare("SELECT email FROM `users` WHERE email=:email AND pass=:pass");
       $stmt->bindParam(':email', $email);
       $stmt->bindParam(':pass', $psw);
+
       // $stmt->bindParam(':role', $role);
 
       $stmt->execute();      
@@ -45,6 +46,11 @@ if (empty($_POST["email"])) {
       $rows = $stmt->fetchAll();
       if(count($rows) > 0){
         echo "User logged in successfully!";
+        $stmt = $conn->prepare("SELECT id FROM `users`");
+        $stmt->execute();
+        $id = $stmt->fetchAll();
+        session_start($id);  
+        var_dump($_SESSION);
       }else{
         echo "Invalid email or password!";
       }
