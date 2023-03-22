@@ -1,7 +1,9 @@
 <?php require_once 'components/card.php'; ?>
 <?php require_once 'components/login.php'; ?>
 <?php require_once 'components/header.php'; ?>
-
+<?php require_once 'components/headerLoggedIn.php'; ?>
+<?php require_once 'pages/conn.php'; ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -14,8 +16,9 @@
     <script src="js/login-popup.js"></script>
   </head>
   <body class="grid bg-gray-100">
-    <?php headerComp(); ?>
-    <?php login(); ?>
+  <?php 
+  sessionValid();
+  ?>
     <img src="media/bg-cocktail.png" alt="cocktails" class="w-full mb-4" />
     <main class="max-w-6xl mx-auto mt-1 mb-3 rounded-lg ">
     <div class="z-20 transition-all ease-in-out rounded-lg shadow mb-28 place-self-center" id="productAdd">

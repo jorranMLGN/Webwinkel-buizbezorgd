@@ -50,10 +50,24 @@ function addCart(name, price) {
 
     total -= parseFloat(price);
     totalNode.textContent = "Totaal:  €" + total.toFixed(2);
+    if (itemsAdded < 1) {
+      total = 0.0;
+      const emptyCard = document.createElement("h1");
+      const textNodeEmpty = document.createTextNode("Winkelmand is leeg!");
+      emptyCard.appendChild(textNodeEmpty);
+      emptyCard.setAttribute("id", "emptyCard");
+      document.getElementById("shopCartParent").appendChild(emptyCard);
+    }
   });
   button.textContent = "X";
   containerDiv.appendChild(button);
-
+  if (total > 0.0) {
+    // if the cart is not empty, remove the empty cart message
+    const emptyCard = document.getElementById("emptyCard");
+    if (emptyCard) {
+      document.getElementById("emptyCard").remove();
+    }
+  }
   // Add padding to the right side of the container div
 
   // Add media queries for responsive styling

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +22,8 @@ $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
 // $delay = $_POST[""];
 
 $email = $_POST["email"];
+$_SESSION['email'] = $email;
+
 $psw = $_POST["password"];
 // $role = "";
 
@@ -40,17 +44,26 @@ if (empty($_POST["email"])) {
 
       // $stmt->bindParam(':role', $role);
 
-      $stmt->execute();      
+      $stmt->execute();
 
       $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
       $rows = $stmt->fetchAll();
       if(count($rows) > 0){
-        echo "User logged in successfully!";
-        $stmt = $conn->prepare("SELECT id FROM `users`");
+        echo "User logged in successfully!<br>";
+        $stmt = $conn->prepare("SELECT id FROM `users` WHERE email=:email");
+        $stmt->bindParam(':email', $email);
+          
         $stmt->execute();
-        $id = $stmt->fetchAll();
-        session_start($id);  
-        var_dump($_SESSION);
+        $id = $stmt->fetch();
+
+
+        // $token = bin2hex(random_bytes(16)); // generate 16 bytes of random data and convert it to a hexadecimal string
+        $_SESSION['user_id'] = $id;
+        
+        echo "Session ID: <BR>";
+        echo ($id[0]);
+
+        
       }else{
         echo "Invalid email or password!";
       }
@@ -60,8 +73,7 @@ if (empty($_POST["email"])) {
     }
   }
 }
-header('refresh:5; url=../index.php#');
-$conn = null;
+header('refresh:1; url=../index.php#');
 ?>
 </body>
 </html>

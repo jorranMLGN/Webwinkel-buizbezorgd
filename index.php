@@ -1,7 +1,10 @@
 <?php require_once 'components/card.php'; ?>
 <?php require_once 'components/login.php'; ?>
 <?php require_once 'components/header.php'; ?>
+<?php require_once 'components/headerLoggedIn.php'; ?>
+<?php require_once 'pages/conn.php'; ?>
 
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html>
@@ -15,12 +18,10 @@
     <link href="https://fonts.apple.com/fonts/san-francisco" rel="stylesheet" />
   </head>
   <body class="grid bg-gray-100">
-    <?php headerComp(); ?>
-    <?php login(); ?>
+  <?php 
+  sessionValid();
+  ?>
 
-    <?php 
-      // var_dump($_SESSION);
-      ?>
     <img src="media/bg-cocktail.png" alt="cocktails" class="w-full mb-4" />
     <main class="max-w-6xl mx-auto mt-1 mb-3 bg-white rounded-lg shadow-xl">
       <div class="flex flex-wrap">

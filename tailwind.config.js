@@ -15,6 +15,7 @@ module.exports = {
       pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       bounce: "bounce 1s infinite",
     },
+
     aria: {
       checked: 'checked="true"',
       disabled: 'disabled="true"',
@@ -963,5 +964,5 @@ module.exports = {
       50: "50",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
