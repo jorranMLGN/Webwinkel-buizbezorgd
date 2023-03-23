@@ -7,13 +7,7 @@ session_start();
 
 <?php
 
-if (isset($_POST['message'])) {
-  $fullname = $_POST['fullName'];
-  $email = $_POST['email'];
-  $message = $_POST['message'];
-  $phone = $_POST['phone'];
-  
-  $_SESSION['message'] = $message;
+  $id = $_POST["id"];
 
   $servername = "localhost";
   $username = "root";
@@ -23,12 +17,12 @@ if (isset($_POST['message'])) {
   $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
   
   
-  if (empty($_POST["fullName"])) {
+  if (empty($_POST["id"])) {
     echo $infoErr = "Unsuccessful";
   } else {
       try{
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $conn->prepare("INSERT INTO `messages` (`fullName`, `email`, `phone`, `body`) VALUES ('$fullname', '$email', '$phone', '$message')");
+        $stmt = $conn->prepare("DELETE FROM `messages` WHERE `id` = '$id'");
         $stmt->execute();      
       }
       catch(PDOException $e) {
@@ -37,10 +31,9 @@ if (isset($_POST['message'])) {
       echo "Succes";
   
   }
-  header('refresh:2; url=../contact.php#');
+  header('refresh:2; url=../messageHub.php#');
   $conn = null;
 
-}
 ?>
 
 

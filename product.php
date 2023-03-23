@@ -2,7 +2,9 @@
 <?php require_once 'components/login.php'; ?>
 <?php require_once 'components/header.php'; ?>
 <?php require_once 'pages/conn.php';?> 
-<?php require_once 'components/headerLoggedIn.php'; ?>
+<?php require_once 'components/headerLoggedIn.php'; 
+ require_once 'components/footer.php';
+ require_once 'components/messageContainer.php';?>
 
 
 <?php session_start(); ?>
@@ -87,12 +89,7 @@
 
       </aside>
     </main>
-    <footer class="bg-gray-200">
-      <div
-        class="container flex items-center justify-between px-6 py-4 mx-auto">
-        <p class="mt-2 text-gray-600">© 2023 Buisbezorgd</p>
-        <a class="text-gray-600 hover:text-gray-800" href="/contact">Contact</a>
-      </div>
-    </footer>
+    <?php footer();?>
+
   </body>
 </html>

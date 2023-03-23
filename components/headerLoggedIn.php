@@ -24,10 +24,12 @@ require_once "./pages/conn.php";
   </nav>
   </header>
   <div id="personal-menu" class="absolute hidden w-32 py-2 bg-white rounded-md shadow-xl right-2 top-10">
-  <a href="#" class="block px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100">My Orders</a>
-  <a href="./product-add.php" class="$admin px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100">Admin Panel</a>
+  <a href="#" class="block px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100">Mijn bestellingen</a>
+  <a href="./product-add.php" class="$admin px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100">Admin Paneel</a>
+  <a href="./messageHub.php" class="$admin px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100">Berichten Hub</a>
+
   <form action="./pages/log-out.php" method="post">
-  <button class="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</button>
+  <button class="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Uitloggen</button>
   </form>
   </div>
 

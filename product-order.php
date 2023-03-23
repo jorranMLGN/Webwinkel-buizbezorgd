@@ -1,6 +1,8 @@
 <?php require_once 'components/card.php'; ?>
 <?php require_once 'components/login.php'; ?>
-<?php require_once 'components/header.php'; ?>
+<?php require_once 'components/header.php'; 
+ require_once 'components/footer.php';?>
+
 <?php session_start(); ?>
 
 <!DOCTYPE html>
@@ -45,12 +47,6 @@
     </form>
     </div>
     </main>
-    <footer class="bg-gray-200">
-      <div
-        class="container flex items-center justify-between px-6 py-4 mx-auto">
-        <p class="mt-2 text-gray-600">© 2023 Buisbezorgd</p>
-        <a class="text-gray-600 hover:text-gray-800" href="/contact">Contact</a>
-      </div>
-    </footer>
-  </body>
+    <?php footer();?>
+
 </html>

@@ -4,6 +4,7 @@
  require_once 'components/header.php'; 
  require_once 'components/headerLoggedIn.php'; 
  require_once 'pages/conn.php'; 
+  require_once 'components/footer.php';
  session_start(); 
   if(!isset($_SESSION['email'])){ 
     header('Location: index.php#');
@@ -27,6 +28,7 @@
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/login-popup.js"></script>
+    <script src="js/shopping-add.js"></script>
   </head>
   <body class="grid bg-gray-100">
   <?php 
@@ -110,11 +112,6 @@
       </div>
     </main>
     <footer class="bg-gray-200">
-      <div
-        class="container flex items-center justify-between px-6 py-4 mx-auto">
-        <p class="mt-2 text-gray-600">© 2023 Buisbezorgd</p>
-        <a class="text-gray-600 hover:text-gray-800" href="/contact">Contact</a>
-      </div>
-    </footer>
+
   </body>
 </html>

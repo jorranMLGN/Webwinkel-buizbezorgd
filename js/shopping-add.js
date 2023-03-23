@@ -85,3 +85,10 @@ function addCart(name, price) {
     button.style.transform = "translateY(-50%)";
   }
 }
+
+function changeDescPopup(idmain, idChange) {
+  const popupMain = document.getElementById(idmain);
+  popupMain.classList.toggle("hidden");
+  const popupChange = document.getElementById(idChange);
+  popupChange.classList.toggle("hidden");
+}

@@ -2,7 +2,9 @@
 <?php require_once 'components/login.php'; ?>
 <?php require_once 'components/header.php'; ?>
 <?php require_once 'components/headerLoggedIn.php'; ?>
-<?php require_once 'pages/conn.php'; ?>
+<?php require_once 'pages/conn.php'; 
+require_once 'components/footer.php';
+?>
 
 <?php session_start();?>
 
@@ -94,7 +96,7 @@
           class="px-4 py-16 bg-white rounded sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div class="max-w-lg mx-auto lg:max-w-none">
 
-            <form action="pages/mail.php" method="post" target="_blank" class="grid grid-cols-1 gap-y-6">
+            <form action="pages/mail.php" method="post" class="grid grid-cols-1 gap-y-6">
               <div>
                 <label for="full-name" class="sr-only">Volledige naam</label>
                 <input
@@ -105,7 +107,16 @@
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-md focus:border-indigo-500 focus:ring-indigo-500"
                   placeholder="Volledige naam" required/>
               </div>
-
+              <div>              
+              <label for="mail" class="sr-only">E-mail</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  autocomplete="name"
+                  class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-md focus:border-indigo-500 focus:ring-indigo-500"
+                  placeholder="E-mail" required/>
+              </div>
               <div>
                 <label for="phone" class="sr-only">Telefoon</label>
                 <input
@@ -131,6 +142,7 @@
                   class="inline-flex justify-center px-6 py-3 text-base font-medium text-white bg-green-600 border border-transparent rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-800 ">
                   Verstuur
                 </button>
+
               </div>
             </form>
           </div>
@@ -138,12 +150,7 @@
       </div>
     </div>
     </main>
-    <footer class="bg-gray-200">
-      <div
-        class="container flex items-center justify-between px-6 py-4 mx-auto">
-        <p class="mt-2 text-gray-600">© 2023 Buisbezorgd</p>
-        <a class="text-gray-600 hover:text-gray-800" href="/contact">Contact</a>
-      </div>
-    </footer>
+    <?php footer();?>
+
   </body>
 </html>
