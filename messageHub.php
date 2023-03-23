@@ -1,4 +1,5 @@
-<?php require_once 'components/card.php'; 
+<?php 
+ require_once 'components/card.php'; 
  require_once 'components/cardRemove.php'; 
  require_once 'components/login.php'; 
  require_once 'components/header.php'; 

@@ -2,11 +2,6 @@ var loginToggle = false;
 var registerToggle = false;
 
 function personalMenuToggle() {
-  const personalMenuToggle = document.getElementById("personal-menu-toggle");
-  const personalMenu = document.getElementById("personal-menu");
-
-  personalMenu.classList.toggle("hidden");
-
   document.addEventListener("click", (event) => {
     const isClickInside =
       personalMenu.contains(event.target) ||

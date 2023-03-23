@@ -1,11 +1,12 @@
-<?php require_once 'components/card.php'; ?>
-<?php require_once 'components/login.php'; ?>
-<?php require_once 'components/header.php'; ?>
-<?php require_once 'components/headerLoggedIn.php'; ?>
-<?php require_once 'pages/conn.php'; 
-require_once 'components/footer.php';
+<?php
+ require_once 'components/card.php';
+ require_once 'components/login.php';
+ require_once 'components/header.php';
+ require_once 'pages/conn.php';
+ require_once 'components/headerLoggedIn.php';
+ require_once 'components/footer.php';
+ require_once 'components/messageContainer.php';
 ?>
-
 <?php session_start();?>
 
 <!DOCTYPE html>

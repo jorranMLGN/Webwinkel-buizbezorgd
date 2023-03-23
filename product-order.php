@@ -1,10 +1,10 @@
-<?php require_once 'components/card.php'; ?>
-<?php require_once 'components/login.php'; ?>
-<?php require_once 'components/header.php'; 
- require_once 'components/footer.php';?>
-
-<?php session_start(); ?>
-
+<?php
+require_once 'components/card.php';
+require_once 'components/login.php';
+require_once 'components/header.php';
+require_once 'components/footer.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
