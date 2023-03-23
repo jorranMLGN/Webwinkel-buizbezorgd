@@ -60,8 +60,16 @@ if (empty($_POST["email"])) {
         // $token = bin2hex(random_bytes(16)); // generate 16 bytes of random data and convert it to a hexadecimal string
         $_SESSION['user_id'] = $id;
         
-        echo "Session ID: <BR>";
-        echo ($id[0]);
+        echo "User ID: <BR>";
+        echo ($id[0]."<br>");
+        $stmt = $conn->prepare("SELECT role FROM `users` WHERE email=:email");
+        $stmt->bindParam(':email', $email);
+          
+        $stmt->execute();
+        $id = $stmt->fetch();
+        $_SESSION['role'] = $id;
+        echo "Session Role: <BR>";
+        echo ($id[0]."<br>");
 
         
       }else{
@@ -73,7 +81,7 @@ if (empty($_POST["email"])) {
     }
   }
 }
-header('refresh:1; url=../index.php#');
+header('refresh:5; url=../index.php#');
 ?>
 </body>
 </html>

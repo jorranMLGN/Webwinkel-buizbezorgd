@@ -93,27 +93,19 @@
         <div
           class="px-4 py-16 bg-white rounded sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div class="max-w-lg mx-auto lg:max-w-none">
-            <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
+
+            <form action="pages/mail.php" method="post" target="_blank" class="grid grid-cols-1 gap-y-6">
               <div>
                 <label for="full-name" class="sr-only">Volledige naam</label>
                 <input
                   type="text"
-                  name="full-name"
+                  name="fullName"
                   id="full-name"
                   autocomplete="name"
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-md focus:border-indigo-500 focus:ring-indigo-500"
-                  placeholder="Volledige naam" />
+                  placeholder="Volledige naam" required/>
               </div>
-              <div>
-                <label for="email" class="sr-only">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-md focus:border-indigo-500 focus:ring-indigo-500"
-                  placeholder="Email" />
-              </div>
+
               <div>
                 <label for="phone" class="sr-only">Telefoon</label>
                 <input
@@ -122,20 +114,20 @@
                   id="phone"
                   autocomplete="tel"
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-md focus:border-indigo-500 focus:ring-indigo-500"
-                  placeholder="Telefoon" />
+                  placeholder="Telefoon" required/>
               </div>
               <div>
                 <label for="message" class="sr-only">Bericht</label>
                 <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-md focus:border-indigo-500 focus:ring-indigo-500"
-                  placeholder="Bericht"></textarea>
+                id="message"
+                name="message"
+                rows="4"
+                class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-md focus:border-indigo-500 focus:ring-indigo-500"
+                placeholder="Bericht" required></textarea>
               </div>
               <div>
                 <button
-                  type="button"
+                  type="submit"
                   class="inline-flex justify-center px-6 py-3 text-base font-medium text-white bg-green-600 border border-transparent rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-800 ">
                   Verstuur
                 </button>

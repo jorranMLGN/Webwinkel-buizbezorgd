@@ -36,7 +36,7 @@ if (empty($_POST["name"])) {
     echo "Succes";
 
 }
-header('refresh:5; url=../product-add.php#');
+header('refresh:2; url=../product-add.php#');
 $conn = null;
 ?>
 </body>

@@ -34,7 +34,7 @@
           placeholder="Zoek een product"
         />
         <button
-          class="w-20 p-1 m-auto ml-4 text-white bg-blue-500 rounded-lg max-h-10 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          class="w-20 p-1 m-auto ml-4 text-white bg-green-600 rounded-lg max-h-10 hover:bg-green-700 focus:outline-none focus:bg-green-800"
           type="submit">Zoek</button>
         <button
           class="w-20 p-1 m-auto ml-4 text-white bg-red-600 rounded-lg max-h-8 hover:bg-red-700 focus:outline-none focus:bg-red-800"

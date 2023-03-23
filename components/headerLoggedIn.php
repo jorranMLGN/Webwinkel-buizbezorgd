@@ -1,6 +1,8 @@
 <?php
-  function headerCompLogged($name) {
-    
+require_once "./pages/conn.php";
+
+  function headerCompLogged($name,$admin) {
+
     echo <<<HEADERCOMPLOGGED
   <header class="flex items-center justify-between px-4 py-2 bg-teal-800">
   <h1 class="text-2xl font-bold text-white">BuisBezorgd</h1>
@@ -23,6 +25,7 @@
   </header>
   <div id="personal-menu" class="absolute hidden w-32 py-2 bg-white rounded-md shadow-xl right-2 top-10">
   <a href="#" class="block px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100">My Orders</a>
+  <a href="./product-add.php" class="$admin px-4 py-2 text-sm text-center text-gray-700 hover:bg-gray-100">Admin Panel</a>
   <form action="./pages/log-out.php" method="post">
   <button class="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</button>
   </form>

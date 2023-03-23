@@ -21,7 +21,6 @@ function sessionValid(){
     $username = "root";
     $password = "password";
     $db = "buisbezordbase";
-  
     $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
@@ -31,9 +30,19 @@ function sessionValid(){
   
     $stmt->execute();
   
-      $email = $_SESSION['email'];
-      $name = explode('@', $email); // Get the part of email before '@'
-      headerCompLogged($name[0]);
+    $email = $_SESSION['email'];
+
+
+
+    $admin = "hidden"; // Set the default value to "hidden"
+    if($_SESSION['role'][0] > 1){
+      $admin = "block";
+    }
+
+
+
+    $name = explode('@', $email);
+     headerCompLogged($name[0], $admin);
   
     // var_dump($email);
     var_dump($name);
